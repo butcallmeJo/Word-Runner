@@ -1,24 +1,54 @@
-/* Sticky footer styles */
-/*-------------------------------------------------- */
-
 html {
     position: relative;
     min-height: 100%;
 }
+
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #F8F8F8;
 }
+
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #f5f5f5;
+    height: 40px;
+    background-color: #C8C8C8;
 }
+
+.page-header {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #C8C8C8;
+}
+
+form {
+	font-family: "Helvetica", Helvetica, sans-serif;
+}
+
+/*================*/
+/*================*/
 
 .spacing-side {
 	padding-left: 5px;
 	padding-right: 5px;
+}
+
+.border-radius {
+	border-radius: 8px;
+	    border-top: 1px solid #CCC;
+	    border-top-width: 2px;
+	    border-bottom: 1px solid #DFDFDF;
+	    border-left: 1px solid #ECECEC;
+	    border-right: 1px solid #ECECEC;
+	    border-top-color: #0088CC;
+}
+
+.progress {
+	/*display: none;*/
 }
