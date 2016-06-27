@@ -2,7 +2,7 @@ $(function() {
     $('#submit').click(function() {
 
         $.ajax({
-            url: 'http://localhost:8091/wiki',
+            url: 'http://cp-0627-2.hbtn.io:8091/wiki',
             data: $('form').serialize(),
             type: 'POST',
             success: function(response) {
