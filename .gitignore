@@ -1,3 +1,6 @@
+maintenance.enable
+.htaccess
+*~
 
 # Created by https://www.gitignore.io/api/osx,sublimetext
 
@@ -43,4 +46,3 @@ Temporary Items
 
 # sftp configuration file
 sftp-config.json
-
