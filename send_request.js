@@ -1,9 +1,9 @@
 $(function() {
     $('#submit').click(function() {
-
+        console.log("This is being called")
         $.ajax({
             url: 'http://cp-0627-2.hbtn.io:8091/wiki/',
-            data: $('#form').serialize(),
+            data: $('form').serialize(),
             type: 'POST',
             success: function(response) {
                 // $('#progress').css("display","block");
