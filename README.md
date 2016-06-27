@@ -1,2 +1,2 @@
-# World-Runner
+# Word-Runner
 Your fastest route through Wikipedia 
