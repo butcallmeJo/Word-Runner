@@ -10,6 +10,14 @@ body {
 	background-color: #F8F8F8;
 }
 
+img {
+    width: 50px;
+    height: 50px;
+    position:absolute;
+}
+h1{
+    padding-left: 60px;
+}
 .footer {
     position: absolute;
     bottom: 0;
@@ -44,7 +52,7 @@ form {
 }
 
 iframe {
-	padding-top: 5px;
+	padding-top: 10px;
 }
 
 .border-radius {
@@ -58,5 +66,5 @@ iframe {
 }
 
 .progress {
-	/*display: none;*/
+	display: none;
 }
