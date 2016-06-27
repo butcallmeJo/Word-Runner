@@ -1,6 +1,7 @@
 $(function() {
     $('#submit').click(function() {
         console.log("This is being called")
+        console.log($('form').serialize())
         $.ajax({
             url: 'http://cp-0627-2.hbtn.io:8091/wiki/',
             data: $('form').serialize(),
