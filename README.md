@@ -7,13 +7,13 @@ Start by adding a word in the first box and your choice of another word in the s
 
 
 Word-Runner is using: 
-Front-End: 
-  -Bootstrap
-  -AJAX, 
-Back-End: 
-  -Go - 2 routines
-  -API
+ Front-End: 
+   -Bootstrap
+   -AJAX, 
+ Back-End: 
+   -Go - 2 routines
+   -API
   Search (Pathfinder),  
-Sys-Admin: 
-  -Apache
-  -Fabric Deployment via Github
+ Sys-Admin: 
+   -Apache
+   -Fabric Deployment via Github
