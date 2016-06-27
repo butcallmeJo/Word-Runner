@@ -2,10 +2,12 @@ $(function() {
     $('#submit').click(function() {
 
         $.ajax({
-            url: '/*INSERT PHP URI HERE*/',
+            url: 'localhost:8091/wiki',
             data: $('form').serialize(),
             type: 'POST',
             success: function(response) {
+                // $('#progress').css("display","block");
+                
                 // In case of success, we should display the result
                 // For now we can debug with console response <-- return value of php function?
                 console.log(response);

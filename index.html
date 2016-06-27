@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+	<title>Word Runner</title>
+    
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +11,15 @@
 	<meta name="Word Runner" content="">
 	<meta name="Holberton Team 2" content="">
     
+    <!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+	<meta property="og:url"           content="cp-0627-2.hbtn.io" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Word Runner" />
+	<meta property="og:description"   content="Your fastest route through Wikipedia" />
+	<meta property="og:image"         content="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png" />
+    
 	<link rel="icon" href="">
-	<title>Word Runner</title>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="send_request.js"></script>
     <!-- Custom styles for this template -->
@@ -49,13 +58,13 @@
 			<form class="form-inline" role="form">
 				<div class="form-group">
 					<label for="word1">Word 1:</label>
-					<input type="text" class="form-control" id="word1">
+					<input type="text" class="form-control" name="first" id="word1" placeholder="start article" autofocus>
 				</div>
 				<div class="form-group spacing-side">
 				</div>
 				<div class="form-group">
 					<label for="word2">Word 2:</label>
-					<input type="text" class="form-control" id="word2">
+					<input type="text" class="form-control" name="second" id="word2" placeholder="end article">
 				</div>
 				<br>
 				<br>
