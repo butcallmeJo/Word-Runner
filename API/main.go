@@ -29,9 +29,10 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
     r.ParseForm()
     Start_l := r.FormValue("first")
     End_l := r.FormValue("second")
-    fmt.Println("Starting path find: " + Start_l + End_l)
 
     if ((len(Start_l) > 0) && (len(End_l) > 0)) {
+
+        fmt.Println("Path find: " + Start_l + " " + End_l)
 
         reFindLink, err := regexp.Compile("href=\"(/wiki/[^\"/ :#]*)\"")
 
@@ -85,7 +86,6 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
                             }
                             if (u < 1000) {
                                 u = u+1
-                                fmt.Println(u)
                             } else {
                                 mutex.Unlock()
                                 done = true
@@ -99,7 +99,6 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
                     }
                     time.Sleep(10);
                 }
-
                 return;
             }(i)
         }
@@ -110,9 +109,11 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
             stringfinal := strings.Join(solution, ", ")
             w.Write([]byte(stringfinal))
         } else {
+            fmt.Println("Error - bad data or could not find a path.")
             w.Write([]byte("Error - bad data or could not find a path."))
         }
     } else {
+        fmt.Println("Error - missing data.")
         w.Write([]byte("Error - missing data."))
     }
 })
