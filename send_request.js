@@ -2,11 +2,9 @@ $(function() {
     $('#submit').click(function() {
         console.log("This is being called")
         console.log($('form').serialize())
-        $.ajax({
-            url: 'http://cp-0627-2.hbtn.io:8091/wiki/',
-            data: $('form').serialize(),
-            type: 'POST',
-            success: function(response) {
+        var url = 'http://cp-0627-2.hbtn.io:8091/wiki/'
+        var data = $('form').serialize()
+        $.post(url, data, function() {
                 // $('#progress').css("display","block");
 				console.log("hi")
                 // In case of success, we should display the result
@@ -16,10 +14,6 @@ $(function() {
                 /*
                 $("textarea").html(// code to display result here)
                 */
-            },
-            error: function(error) {
-                console.log(error);
-            }
         });
     });
 });
