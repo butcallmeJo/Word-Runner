@@ -39,6 +39,14 @@ form {
 	padding-right: 5px;
 }
 
+.top-pad {
+	padding-top: 5px;
+}
+
+iframe {
+	padding-top: 5px;
+}
+
 .border-radius {
 	border-radius: 8px;
 	    border-top: 1px solid #CCC;
