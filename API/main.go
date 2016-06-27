@@ -29,6 +29,7 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
     r.ParseForm()
     Start_l := r.FormValue("first")
     End_l := r.FormValue("second")
+    fmt.Println("Starting path find: " + Start_l + End_l)
 
     if ((len(Start_l) > 0) && (len(End_l) > 0)) {
 
@@ -46,7 +47,8 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
         link_goal := "/wiki/" + End_l
         done := false
         level := 1
-        thread_count := 512
+        u := 1
+        thread_count := 100
         var solution []string
 
         queue := make(chan []string, 100000000)
@@ -54,12 +56,10 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
         queue <- http_start
 
         for i := 0; i < thread_count; i++ {
-
             go func (id int) {
                 defer func() {
                     thread_count--
                 } ()
-
                 for L := range queue {
                     if len(L) > level {
                         level++
@@ -83,11 +83,17 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
                                     queue <- append(L, links[t][1])
                                 }
                             }
+                            if (u < 1000) {
+                                u = u+1
+                                fmt.Println(u)
+                            } else {
+                                mutex.Unlock()
+                                done = true
+                                return
+                            }
                         }
                         mutex.Unlock()
-                    } else {
-                        fmt.Println(err)
-                    }
+                    } 
                     if done {
                         return
                     }
@@ -100,8 +106,12 @@ var FindHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){
         for !done || thread_count > 0 {
             time.Sleep(1)
         }
-        stringfinal := strings.Join(solution, ", ")
-        w.Write([]byte(stringfinal))
+        if ( u < 1000) {
+            stringfinal := strings.Join(solution, ", ")
+            w.Write([]byte(stringfinal))
+        } else {
+            w.Write([]byte("Error - bad data or could not find a path."))
+        }
     } else {
         w.Write([]byte("Error - missing data."))
     }
