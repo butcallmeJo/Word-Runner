@@ -4,7 +4,7 @@ $(function() {
         console.log($('form').serialize())
         var url = 'http://cp-0627-2.hbtn.io:8091/wiki/'
         var data = $('form').serialize()
-        $.post(url, data, function() {
+        $.post(url, data, function(response) {
                 // $('#progress').css("display","block");
 				console.log("hi")
                 // In case of success, we should display the result
