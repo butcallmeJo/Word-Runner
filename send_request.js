@@ -9,10 +9,7 @@ $(function() {
                 // In case of success, we should display the result
                 // For now we can debug with console response <-- return value of go function
                 console.log(response);
-
-                /*
-                $("textarea").html(// code to display result here)
-                */
+                $("#result").html(response)
             },
             error: function(error) {
                 console.log(error);
