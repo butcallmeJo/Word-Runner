@@ -6,7 +6,6 @@ $(function() {
             data: $('#form').serialize(),
             type: 'POST',
             success: function(response) {
-				console.log
                 // $('#progress').css("display","block");
 				console.log("hi")
                 // In case of success, we should display the result
